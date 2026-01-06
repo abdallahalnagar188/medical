@@ -26,8 +26,16 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
   }
 
   Future<void> _initializePlayer() async {
+    if (widget.video.videoPath == null) {
+      // No video available, skip initialization
+      setState(() {
+        _isInitialized = false;
+      });
+      return;
+    }
+
     _videoPlayerController = VideoPlayerController.asset(
-      widget.video.videoPath,
+      widget.video.videoPath!, // Use ! since we checked null above
     );
 
     await _videoPlayerController.initialize();
@@ -51,15 +59,15 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
       allowMuting: true,
       showControls: true,
       materialProgressColors: ChewieProgressColors(
-        playedColor: Colors.teal,
-        handleColor: Colors.tealAccent,
+        playedColor: Colors.pink,
+        handleColor: Colors.pinkAccent,
         backgroundColor: Colors.grey,
-        bufferedColor: Colors.teal.shade200,
+        bufferedColor: Colors.pink.shade200,
       ),
       placeholder: Container(
         color: Colors.black,
         child: const Center(
-          child: CircularProgressIndicator(color: Colors.teal),
+          child: CircularProgressIndicator(color: Colors.pink),
         ),
       ),
       deviceOrientationsAfterFullScreen: [DeviceOrientation.portraitUp],
@@ -92,7 +100,8 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.teal.shade400, Colors.blue.shade600],
+              colors: [  Colors.pink.shade400,
+                Colors.pink.shade200,],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -116,7 +125,7 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   : const AspectRatio(
                       aspectRatio: 16 / 9,
                       child: Center(
-                        child: CircularProgressIndicator(color: Colors.teal),
+                        child: CircularProgressIndicator(color: Colors.pink),
                       ),
                     ),
             ),
@@ -140,7 +149,7 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   const SizedBox(height: 20),
 
                   // Divider
-                  Divider(color: Colors.teal.shade200, thickness: 2),
+                  Divider(color: Colors.pink.shade200, thickness: 2),
                   const SizedBox(height: 20),
 
                   // Show Content Button
@@ -162,7 +171,7 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
+                      backgroundColor: Colors.pink,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -177,9 +186,9 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
+                      color: Colors.pink.shade50,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.teal.shade200),
+                      border: Border.all(color: Colors.pink.shade200),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -202,12 +211,12 @@ class _VideoDetailScreenState extends State<VideoDetailScreen> {
   Widget _buildInfoItem(IconData icon, String label) {
     return Column(
       children: [
-        Icon(icon, color: Colors.teal.shade700, size: 28),
+        Icon(icon, color: Colors.pink.shade700, size: 28),
         const SizedBox(height: 8),
         Text(
           label,
           style: TextStyle(
-            color: Colors.teal.shade700,
+            color: Colors.pink.shade700,
             fontWeight: FontWeight.w600,
             fontSize: 12,
           ),

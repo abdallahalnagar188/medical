@@ -34,14 +34,14 @@ class MyApp extends StatelessWidget {
       // Theme configuration
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          primary: Colors.teal,
+          seedColor: Colors.pink,
+          primary: Colors.pink,
         ),
         useMaterial3: true,
         fontFamily: 'Cairo', // Will use system Arabic font
         // AppBar theme
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.teal.shade400,
+          backgroundColor: Colors.pink.shade400,
           foregroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
         // Button theme
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.teal,
+            backgroundColor: Colors.pink,
             foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
             shape: RoundedRectangleBorder(

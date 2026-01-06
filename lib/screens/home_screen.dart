@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../data/videos_data.dart';
 import '../models/video_model.dart';
 import 'video_detail_screen.dart';
+import 'content_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,15 +11,15 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'المواضيع الطبية',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        centerTitle: true,
+        // title: const Text(
+        //   'المواضيع الطبية',
+        //   style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        // ),centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.teal.shade400, Colors.blue.shade600],
+              colors: [  Colors.pink.shade400,
+                Colors.pink.shade200,],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -31,7 +32,7 @@ class HomeScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.teal.shade50, Colors.blue.shade50],
+            colors: [Colors.pink.shade50, Colors.blue.shade50],
           ),
         ),
         child: ListView.builder(
@@ -41,12 +42,24 @@ class HomeScreen extends StatelessWidget {
             return _VideoCard(
               video: videosData[index],
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => VideoDetailScreen(video: videosData[index]),
-                  ),
-                );
+                // If no video, go directly to content screen
+                if (videosData[index].videoPath == null) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ContentScreen(video: videosData[index]),
+                    ),
+                  );
+                } else {
+                  // Go to video detail screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          VideoDetailScreen(video: videosData[index]),
+                    ),
+                  );
+                }
               },
             );
           },
@@ -76,7 +89,7 @@ class _VideoCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             gradient: LinearGradient(
-              colors: [Colors.white, Colors.teal.shade50],
+              colors: [Colors.white, Colors.pink.shade50],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -91,7 +104,7 @@ class _VideoCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.teal.withValues(alpha: 0.3),
+                      color: Colors.pink.withValues(alpha: 0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 4),
                     ),
@@ -109,7 +122,7 @@ class _VideoCard extends StatelessWidget {
                         errorBuilder: (context, error, stackTrace) {
                           // Fallback if image fails to load
                           return Container(
-                            color: Colors.teal.shade400,
+                            color: Colors.pink.shade400,
                             child: const Icon(
                               Icons.medical_services,
                               color: Colors.white,
@@ -150,7 +163,7 @@ class _VideoCard extends StatelessWidget {
               // Arrow icon
               Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.teal.shade400,
+                color: Colors.pink.shade400,
                 size: 20,
               ),
             ],

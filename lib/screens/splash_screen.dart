@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     // Navigate to home screen after 3 seconds
-    Timer(const Duration(seconds: 3), () {
+    Timer(const Duration(seconds: 5), () {
       Navigator.of(
         context,
       ).pushReplacement(MaterialPageRoute(builder: (_) => const HomeScreen()));
@@ -53,9 +53,8 @@ class _SplashScreenState extends State<SplashScreen>
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.teal.shade400,
-              Colors.blue.shade600,
-              Colors.indigo.shade700,
+              Colors.pink.shade400,
+              Colors.pink.shade200,
             ],
           ),
         ),
@@ -86,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
                 const SizedBox(height: 40),
                 // App Title
                 const Text(
-                  'الوقايه والعلاج من الإصابات',
+                  "تأهيل الإصابات الرياضية",
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -103,7 +102,7 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'دليلك الشامل للتأهيل والوقاية',
+                  'دليلك  الشامل لتأهيل ووقاية الإصابات الرياضية',
                   style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
               ],

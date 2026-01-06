@@ -18,7 +18,8 @@ class ContentScreen extends StatelessWidget {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.teal.shade400, Colors.blue.shade600],
+              colors: [  Colors.pink.shade400,
+                Colors.pink.shade200,],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -32,7 +33,7 @@ class ContentScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.teal.shade50, Colors.white],
+            colors: [Colors.pink.shade50, Colors.white],
           ),
         ),
         child: SingleChildScrollView(
@@ -66,8 +67,8 @@ class ContentScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [
-                              Colors.teal.shade400,
-                              Colors.blue.shade600,
+                              Colors.pink.shade400,
+                              Colors.pink.shade200,
                             ],
                           ),
                           borderRadius: BorderRadius.circular(16),
@@ -91,12 +92,13 @@ class ContentScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Colors.teal.shade400, Colors.blue.shade600],
+                    colors: [  Colors.pink.shade400,
+                      Colors.pink.shade200,],
                   ),
                   borderRadius: BorderRadius.circular(16),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.teal.withValues(alpha: 0.3),
+                      color: Colors.pink.withValues(alpha: 0.3),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
@@ -144,12 +146,12 @@ class ContentScreen extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: Colors.teal.shade50,
+                          color: Colors.pink.shade50,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
                           Icons.local_hospital,
-                          color: Colors.teal.shade600,
+                          color: Colors.pink.shade600,
                           size: 48,
                         ),
                       ),
@@ -157,7 +159,7 @@ class ContentScreen extends StatelessWidget {
                     const SizedBox(height: 24),
 
                     // Divider
-                    Divider(color: Colors.teal.shade200, thickness: 2),
+                    Divider(color: Colors.pink.shade200, thickness: 2),
                     const SizedBox(height: 24),
 
                     // Content Text
