@@ -539,7 +539,7 @@ final List<VideoModel> videosData = [
   VideoModel(
     id: '9',
     title: 'تأهيل مفصل الكاحل',
-    imagePath: 'assets/images/مفصل الكاحل.jpeg',
+    imagePath: 'assets/images/مفصل لانكل.jpeg',
     videoPath: 'assets/videos/7.mp4',
     content: '''
 تأهيل مفصل الكاحل
