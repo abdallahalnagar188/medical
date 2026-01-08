@@ -66,21 +66,21 @@ class _SplashScreenState extends State<SplashScreen>
               children: [
                 // Logo
                 Container(
-                  width: 180,
-                  height: 180,
-                  padding: const EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: Image.asset('assets/logo.jpeg', fit: BoxFit.contain),
+                  // width: 200,
+                  // height: 180,
+                  padding:  EdgeInsets.symmetric(horizontal: 20),
+                 //  decoration: BoxDecoration(
+                 //    color: Colors.white,
+                 //    borderRadius: BorderRadius.circular(30),
+                 //    boxShadow: [
+                 //      BoxShadow(
+                 //        color: Colors.black.withValues(alpha: 0.2),
+                 //        blurRadius: 20,
+                 //        offset: const Offset(0, 10),
+                 //      ),
+                 //    ],
+                 //  ),
+                  child: Image.asset('assets/new_splash.png', fit: BoxFit.cover),
                 ),
                 const SizedBox(height: 40),
                 // App Title
