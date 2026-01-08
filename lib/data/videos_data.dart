@@ -538,11 +538,11 @@ final List<VideoModel> videosData = [
   ),
   VideoModel(
     id: '9',
-    title: 'تأهيل مفصل الانكل',
-    imagePath: 'assets/images/مفصل لانكل.jpeg',
+    title: 'تأهيل مفصل الكاحل',
+    imagePath: 'assets/images/مفصل الكاحل.jpeg',
     videoPath: 'assets/videos/7.mp4',
     content: '''
-تأهيل مفصل الانكل
+تأهيل مفصل الكاحل
 
 برنامج تأهيل شامل لمفصل الكاحل يتضمن خمس مراحل علاجية متدرجة لاستعادة الحركة والقوة والتوازن.
 
